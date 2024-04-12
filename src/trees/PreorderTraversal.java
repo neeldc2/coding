@@ -20,25 +20,26 @@ public class PreorderTraversal {
 
     public static List<Integer> iterativeTraversal(BinaryTreeNode root) {
         Stack<BinaryTreeNode> stack = new Stack<>();
-        List<Integer> inorderTraversal = new ArrayList<>();
+        List<Integer> preorderTraversal = new ArrayList<>();
 
         if (root == null) {
-            return inorderTraversal;
+            return preorderTraversal;
         }
 
         BinaryTreeNode node = root;
         while (node != null || !stack.empty()) {
             if (node != null) {
-                stack.add(node);
+                preorderTraversal.add(node.val);
+                if (node.right != null) {
+                    stack.add(node.right);
+                }
                 node = node.left;
             } else {
                 node = stack.pop();
-                inorderTraversal.add(node.val);
-                node = node.right;
             }
         }
 
-        return inorderTraversal;
+        return preorderTraversal;
     }
 
 }
