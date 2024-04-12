@@ -30,4 +30,46 @@ public class LevelOrderTraversal {
         return levelOrderTraversal;
     }
 
+    /**
+     * This is not optimised solution. Can be made better.
+     * This is a solution for Leetcode question: https://leetcode.com/problems/binary-tree-level-order-traversal/
+     * Submission is accepted.
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> levelOrder(BinaryTreeNode root) {
+        List<List<Integer>> levelOrderTraversal = new ArrayList<>();
+        List<List<BinaryTreeNode>> levelOrderTraversalBinaryTreeNode = new ArrayList<>();
+
+        if (root == null) {
+            return levelOrderTraversal;
+        }
+
+        levelOrderTraversal.add(List.of(root.val));
+        levelOrderTraversalBinaryTreeNode.add(List.of(root));
+
+        for (int i = 0 ; i < levelOrderTraversalBinaryTreeNode.size() ; i++) {
+            List<Integer> list = new ArrayList<>();
+            List<BinaryTreeNode> listBinaryTreeNode = new ArrayList<>();
+
+            for(BinaryTreeNode BinaryTreeNode : levelOrderTraversalBinaryTreeNode.get(i)) {
+                if (BinaryTreeNode.left != null) {
+                    list.add(BinaryTreeNode.left.val);
+                    listBinaryTreeNode.add(BinaryTreeNode.left);
+                }
+                if (BinaryTreeNode.right != null) {
+                    list.add(BinaryTreeNode.right.val);
+                    listBinaryTreeNode.add(BinaryTreeNode.right);
+                }
+            }
+
+            if (!list.isEmpty()) {
+                levelOrderTraversal.add(list);
+                levelOrderTraversalBinaryTreeNode.add(listBinaryTreeNode);
+            }
+        }
+
+        return levelOrderTraversal;
+    }
+
 }
