@@ -55,6 +55,41 @@ public class PostorderTraversal {
         return postorderTraversal;
     }
 
+    /**
+     * Using 2 stacks.
+     * In stack1 insert the root. Until stack 1 is empty, pop from stack 1 and insert left and right of popped node in stack 2.
+     * @param root
+     * @return
+     */
+    public static List<Integer> iterativeTraversalWithTwoStacks(BinaryTreeNode root) {
+        Stack<BinaryTreeNode> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        List<Integer> postorderTraversal = new ArrayList<>();
+
+        if (root == null) {
+            return postorderTraversal;
+        }
+
+        stack1.push(root);
+
+        while (!stack1.isEmpty()) {
+            BinaryTreeNode node = stack1.pop();
+            stack2.push(node.val);
+            if (node.left != null) {
+                stack1.push(node.left);
+            }
+            if (node.right != null) {
+                stack1.push(node.right);
+            }
+        }
+
+        while (!stack2.isEmpty()) {
+            postorderTraversal.add(stack2.pop());
+        }
+
+        return postorderTraversal;
+    }
+
 }
 
 class BinaryTreeAndItsPosition {

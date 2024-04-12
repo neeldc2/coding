@@ -45,6 +45,9 @@ public class TreeMain {
 
             postorderTraversal = PostorderTraversal.iterativeTraversal(root);
             printTraversal(postorderTraversal);
+
+            postorderTraversal = PostorderTraversal.iterativeTraversalWithTwoStacks(root);
+            printTraversal(postorderTraversal);
         }
     }
 
