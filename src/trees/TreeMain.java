@@ -14,20 +14,38 @@ public class TreeMain {
         root.left.right = new BinaryTreeNode(5);
         root.right.right = new BinaryTreeNode(6);
 
-        List<Integer> levelOrderTraversal = LevelOrderTraversal.traverse(root);
-        printTraversal(levelOrderTraversal);
+        System.out.println("Level Order Traversal");
+        {
+            List<Integer> levelOrderTraversal = LevelOrderTraversal.traverse(root);
+            printTraversal(levelOrderTraversal);
+        }
 
-        List<Integer> inorderTraversal = InorderTraversal.recursiveTraversal(root, new ArrayList<>());
-        printTraversal(inorderTraversal);
+        System.out.println("Inorder Traversal");
+        {
+            List<Integer> inorderTraversal = InorderTraversal.recursiveTraversal(root, new ArrayList<>());
+            printTraversal(inorderTraversal);
 
-        inorderTraversal = InorderTraversal.iterativeTraversal(root);
-        printTraversal(inorderTraversal);
+            inorderTraversal = InorderTraversal.iterativeTraversal(root);
+            printTraversal(inorderTraversal);
+        }
 
-        List<Integer> preorderTraversal = PreorderTraversal.recursiveTraversal(root, new ArrayList<>());
-        printTraversal(preorderTraversal);
+        System.out.println("Preorder Traversal");
+        {
+            List<Integer> preorderTraversal = PreorderTraversal.recursiveTraversal(root, new ArrayList<>());
+            printTraversal(preorderTraversal);
 
-        preorderTraversal = InorderTraversal.iterativeTraversal(root);
-        printTraversal(preorderTraversal);
+            preorderTraversal = PreorderTraversal.iterativeTraversal(root);
+            printTraversal(preorderTraversal);
+        }
+
+        System.out.println("Postorder Traversal");
+        {
+            List<Integer> postorderTraversal = PostorderTraversal.recursiveTraversal(root, new ArrayList<>());
+            printTraversal(postorderTraversal);
+
+            postorderTraversal = PostorderTraversal.iterativeTraversal(root);
+            printTraversal(postorderTraversal);
+        }
     }
 
     private static void printTraversal(List<Integer> traversal) {
