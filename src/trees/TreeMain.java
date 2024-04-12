@@ -1,5 +1,6 @@
 package trees;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,6 +16,12 @@ public class TreeMain {
 
         List<Integer> levelOrderTraversal = LevelOrderTraversal.traverse(root);
         printTraversal(levelOrderTraversal);
+
+        List<Integer> inorderTraversal = InorderTraversal.recursiveTraversal(root, new ArrayList<>());
+        printTraversal(inorderTraversal);
+
+        inorderTraversal = InorderTraversal.iterativeTraversal(root);
+        printTraversal(inorderTraversal);
     }
 
     private static void printTraversal(List<Integer> traversal) {
