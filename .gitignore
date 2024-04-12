@@ -10,6 +10,7 @@ out/
 .project
 .settings
 .idea
+Coding.iml
 .springBeans
 .sts4-cache
 bin/
