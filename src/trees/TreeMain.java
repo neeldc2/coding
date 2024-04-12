@@ -22,6 +22,12 @@ public class TreeMain {
 
         inorderTraversal = InorderTraversal.iterativeTraversal(root);
         printTraversal(inorderTraversal);
+
+        List<Integer> preorderTraversal = PreorderTraversal.recursiveTraversal(root, new ArrayList<>());
+        printTraversal(preorderTraversal);
+
+        preorderTraversal = InorderTraversal.iterativeTraversal(root);
+        printTraversal(preorderTraversal);
     }
 
     private static void printTraversal(List<Integer> traversal) {
