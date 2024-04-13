@@ -21,6 +21,7 @@ public class PostorderTraversal {
     /**
      * This is my own solution.
      * I have submitted solution in Leetcode where NodePosition is a String, not Enum.
+     * BinaryTreeAndItsPosition is a Record.
      * @param root
      * @return
      */
@@ -42,8 +43,8 @@ public class PostorderTraversal {
                 node = node.left;
             } else {
                 BinaryTreeAndItsPosition binaryTreeAndItsPosition = stack.pop();
-                node = binaryTreeAndItsPosition.node;
-                NodePosition nodePosition = binaryTreeAndItsPosition.nodePosition;
+                node = binaryTreeAndItsPosition.node();
+                NodePosition nodePosition = binaryTreeAndItsPosition.nodePosition();
 
                 if (nodePosition == NodePosition.MIDDLE) {
                     postorderTraversal.add(node.val);
@@ -92,12 +93,4 @@ public class PostorderTraversal {
 
 }
 
-class BinaryTreeAndItsPosition {
-    BinaryTreeNode node;
-    NodePosition nodePosition;
-
-    public BinaryTreeAndItsPosition(BinaryTreeNode node, NodePosition nodePosition) {
-        this.node = node;
-        this.nodePosition = nodePosition;
-    }
-}
+record BinaryTreeAndItsPosition(BinaryTreeNode node, NodePosition nodePosition) {}

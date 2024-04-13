@@ -49,9 +49,14 @@ public class TreeMain {
             postorderTraversal = PostorderTraversal.iterativeTraversalWithTwoStacks(root);
             printTraversal(postorderTraversal);
         }
+
+        System.out.println("All traversals in one");
+        {
+            ThreeDFSTraversalInOne.allTraversals(root);
+        }
     }
 
-    private static void printTraversal(List<Integer> traversal) {
+    public static void printTraversal(List<Integer> traversal) {
         System.out.println(
                 traversal.stream()
                         .map(Object::toString)
