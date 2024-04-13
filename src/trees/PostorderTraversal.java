@@ -58,7 +58,10 @@ public class PostorderTraversal {
 
     /**
      * Using 2 stacks.
-     * In stack1 insert the root. Until stack 1 is empty, pop from stack 1 and insert left and right of popped node in stack 2.
+     * In stack1, insert the root.
+     * Until stack 1 is empty, pop node from stack 1.
+     * Insert left and right of popped node in stack 1.
+     * Push popped node to stack 2.
      * @param root
      * @return
      */
