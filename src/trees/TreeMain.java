@@ -63,6 +63,11 @@ public class TreeMain {
             maxDepth = MaxDepth.maxDepthUsingRecursion(root);
             System.out.println("Max Depth of Binary tree: " + maxDepth);
         }
+
+        {
+            boolean isBalancedBinaryTree = BalancedBinaryTree.isBinaryTreeBalanced(root);
+            System.out.println("Is the Binary Tree Balanced: " + isBalancedBinaryTree);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
