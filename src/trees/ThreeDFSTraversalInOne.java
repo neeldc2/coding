@@ -10,6 +10,8 @@ public class ThreeDFSTraversalInOne {
      * If position is 1, add to pre and move left
      * If position is 2, add to in and move right
      * If position is 3, add to post
+     * Source: https://www.youtube.com/watch?v=1i8E4mJ9x3o&ab_channel=Yogesh%26Shailesh%28CodeLibrary%29
+     *
      * @param root
      */
     public static void allTraversals(BinaryTreeNode root) {
@@ -47,4 +49,5 @@ public class ThreeDFSTraversalInOne {
 
 }
 
-record BinaryTreeAndItsPositionNumber(BinaryTreeNode node, Integer position) {}
+record BinaryTreeAndItsPositionNumber(BinaryTreeNode node, Integer position) {
+}

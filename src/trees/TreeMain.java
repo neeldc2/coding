@@ -54,6 +54,15 @@ public class TreeMain {
         {
             ThreeDFSTraversalInOne.allTraversals(root);
         }
+
+
+        {
+            int maxDepth = MaxDepth.maxDepthUsingLevelOrderTraversal(root);
+            System.out.println("Max Depth of Binary tree: " + maxDepth);
+
+            maxDepth = MaxDepth.maxDepthUsingRecursion(root);
+            System.out.println("Max Depth of Binary tree: " + maxDepth);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
