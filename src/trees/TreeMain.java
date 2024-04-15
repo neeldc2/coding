@@ -87,6 +87,11 @@ public class TreeMain {
             List<List<Integer>> verticalTraversal = VerticalOrderOfBinaryTree.verticalTraversal(root);
             System.out.println("Vertical Traversal: " + verticalTraversal);
         }
+
+        {
+            List<Integer> topView = TopViewBinaryTree.getView(root);
+            System.out.println("Top View of Binary Tree: " + topView);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
