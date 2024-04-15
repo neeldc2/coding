@@ -1,7 +1,9 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.TreeMap;
 
 public class TopViewBinaryTree {
@@ -49,6 +51,36 @@ public class TopViewBinaryTree {
             }
             if (!newNodeWithPositionInfoList.isEmpty()) {
                 queueList.add(newNodeWithPositionInfoList);
+            }
+        }
+
+        return topViewMap;
+    }
+
+    private static TreeMap<Integer, Integer> optimalTraversal(BinaryTreeNode root) {
+        Queue<NodeWithPositionInfo> queueWithNodePosition = new LinkedList<>();
+        TreeMap<Integer, Integer> topViewMap = new TreeMap<>();
+
+        queueWithNodePosition.add(new NodeWithPositionInfo(root, 0, 0));
+        topViewMap.put(0, root.val);
+
+        while (!queueWithNodePosition.isEmpty()) {
+            NodeWithPositionInfo nodeWithPositionInfo = queueWithNodePosition.poll();
+            BinaryTreeNode node = nodeWithPositionInfo.node();
+            Integer xIndex = nodeWithPositionInfo.xIndex();
+            Integer yIndex = nodeWithPositionInfo.yIndex();
+
+            if (node.left != null) {
+                if (!topViewMap.containsKey(xIndex - 1)) {
+                    topViewMap.put(xIndex - 1, node.left.val);
+                }
+                queueWithNodePosition.add(new NodeWithPositionInfo(root, xIndex - 1, yIndex + 1));
+            }
+            if (node.right != null) {
+                if (!topViewMap.containsKey(xIndex + 1)) {
+                    topViewMap.put(xIndex + 1, node.right.val);
+                }
+                queueWithNodePosition.add(new NodeWithPositionInfo(node.right, xIndex + 1, yIndex + 1));
             }
         }
 
