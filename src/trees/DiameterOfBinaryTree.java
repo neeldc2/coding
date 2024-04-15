@@ -9,7 +9,7 @@ public class DiameterOfBinaryTree {
         return diameter;
     }
 
-    public static int getDiameterUsingMaxDepth(BinaryTreeNode root) {
+    private static int getDiameterUsingMaxDepth(BinaryTreeNode root) {
         if (root == null) {
             return 0;
         }

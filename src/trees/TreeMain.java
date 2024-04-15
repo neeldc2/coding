@@ -73,7 +73,9 @@ public class TreeMain {
         {
             int diameter = 0;
             diameter = DiameterOfBinaryTree.getDiameter(root);
-            System.out.println("Diameter of Binary Tree: " + diameter);
+            System.out.println("Diameter of Binary Tree using Global variable: " + diameter);
+            diameter = DiameterOfBinaryTreeAtomicInteger.getDiameter(root);
+            System.out.println("Diameter of Binary Tree using Atomic Integer: " + diameter);
         }
 
         {
