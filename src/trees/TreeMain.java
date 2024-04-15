@@ -13,6 +13,7 @@ public class TreeMain {
         root.left.left = new BinaryTreeNode(4);
         root.left.right = new BinaryTreeNode(5);
         root.right.right = new BinaryTreeNode(6);
+        root.right.left = new BinaryTreeNode(2);
 
         System.out.println("Level Order Traversal");
         {
@@ -78,6 +79,11 @@ public class TreeMain {
         {
             int maxPathSum = MaximumPathSum.maxPathSum(root);
             System.out.println("Maximum Path Sum: " + maxPathSum);
+        }
+
+        {
+            List<List<Integer>> verticalTraversal = VerticalOrderOfBinaryTree.verticalTraversal(root);
+            System.out.println("Vertical Traversal: " + verticalTraversal);
         }
     }
 
