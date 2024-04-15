@@ -92,6 +92,11 @@ public class TreeMain {
             List<Integer> topView = TopViewBinaryTree.getView(root);
             System.out.println("Top View of Binary Tree: " + topView);
         }
+
+        {
+            List<Integer> bottomView = BottomViewBinaryTree.getView(root);
+            System.out.println("Bottom View of Binary Tree: " + bottomView);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
