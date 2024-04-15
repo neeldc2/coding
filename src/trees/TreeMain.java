@@ -68,6 +68,17 @@ public class TreeMain {
             boolean isBalancedBinaryTree = BalancedBinaryTree.isBinaryTreeBalanced(root);
             System.out.println("Is the Binary Tree Balanced: " + isBalancedBinaryTree);
         }
+
+        {
+            int diameter = 0;
+            diameter = DiameterOfBinaryTree.getDiameter(root);
+            System.out.println("Diameter of Binary Tree: " + diameter);
+        }
+
+        {
+            int maxPathSum = MaximumPathSum.maxPathSum(root);
+            System.out.println("Maximum Path Sum: " + maxPathSum);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
