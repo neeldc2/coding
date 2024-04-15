@@ -66,6 +66,7 @@ public class MaximumPathSum {
             maxPathSum.set(leftSubTreeSum + rightSubTreeSum + root.val);
         }
 
+        // Only one of the path can be chosen. So, chose the max out of left and right sub-tree
         return Math.max(leftSubTreeSum, rightSubTreeSum) + root.val;
     }
 
