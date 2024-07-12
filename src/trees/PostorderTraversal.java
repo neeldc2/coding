@@ -22,6 +22,7 @@ public class PostorderTraversal {
      * This is my own solution.
      * I have submitted solution in Leetcode where NodePosition is a String, not Enum.
      * BinaryTreeAndItsPosition is a Record.
+     *
      * @param root
      * @return
      */
@@ -62,6 +63,7 @@ public class PostorderTraversal {
      * Until stack 1 is empty, pop node from stack 1.
      * Insert left and right of popped node in stack 1.
      * Push popped node to stack 2.
+     *
      * @param root
      * @return
      */
@@ -94,6 +96,31 @@ public class PostorderTraversal {
         return postorderTraversal;
     }
 
+    /**
+     * Add more test cases to validate logic
+     */
+    public static void testPostOrderTraversal() {
+        boolean correct = true;
+        BinaryTreeNode root = new BinaryTreeNode(1);
+        root.left = new BinaryTreeNode(2);
+        root.right = new BinaryTreeNode(3);
+        root.left.left = new BinaryTreeNode(4);
+        root.left.right = new BinaryTreeNode(5);
+        root.right.right = new BinaryTreeNode(6);
+        root.right.left = new BinaryTreeNode(2);
+        List<Integer> correctOrder = List.of(4, 5, 2, 2, 6, 3, 1);
+
+        List<Integer> postorderTraversal = iterativeTraversal(root);
+        correct = correct && correctOrder.equals(postorderTraversal);
+
+        if (correct) {
+            System.out.println("Correct");
+        } else {
+            System.out.println("Wrong");
+        }
+    }
+
 }
 
-record BinaryTreeAndItsPosition(BinaryTreeNode node, NodePosition nodePosition) {}
+record BinaryTreeAndItsPosition(BinaryTreeNode node, NodePosition nodePosition) {
+}
