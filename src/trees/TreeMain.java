@@ -97,6 +97,11 @@ public class TreeMain {
             List<Integer> bottomView = BottomViewBinaryTree.getView(root);
             System.out.println("Bottom View of Binary Tree: " + bottomView);
         }
+
+        {
+            boolean isSymmetric = IsBinaryTreeSymmetric.isSymmetric(root);
+            System.out.println("Is Binary Tree Symmetric: " + isSymmetric);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
