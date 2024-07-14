@@ -19,6 +19,7 @@ public class MorrisInorderTraversal {
                 // link current node and inorder predecessor
                 if (inOrderPredecessor.right != node) {
                     inOrderPredecessor.right = node;
+                    // Add morrisInorderTraversal.add(node.val); here if it's Morris Pre Order Traversal
                     node = node.left;
                 } else {
                     inOrderPredecessor.right = null;
