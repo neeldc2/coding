@@ -102,6 +102,12 @@ public class TreeMain {
             boolean isSymmetric = IsBinaryTreeSymmetric.isSymmetric(root);
             System.out.println("Is Binary Tree Symmetric: " + isSymmetric);
         }
+
+        System.out.println("Morris In-Order Traversal");
+        {
+            List<Integer> levelOrderTraversal = MorrisInorderTraversal.traverse(root);
+            printTraversal(levelOrderTraversal);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
