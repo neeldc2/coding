@@ -108,6 +108,15 @@ public class TreeMain {
             List<Integer> levelOrderTraversal = MorrisInorderTraversal.traverse(root);
             printTraversal(levelOrderTraversal);
         }
+
+        {
+            System.out.println("Constructing Binary Tree for PreOrder and Inorder");
+            List<Integer> inorderTraversal = List.of(4,2,5,1,6,3,7);
+            List<Integer> preorderTraversal = List.of(1,2,4,5,3,6,7);
+            BinaryTreeNode resultingRoot = BinaryTreeFromInOrderAndPreOrder.constructTree(inorderTraversal, preorderTraversal);
+            printTraversal(InorderTraversal.recursiveTraversal(resultingRoot, new ArrayList<>()));
+            printTraversal(PreorderTraversal.recursiveTraversal(resultingRoot, new ArrayList<>()));
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
