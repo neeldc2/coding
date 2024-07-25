@@ -117,6 +117,13 @@ public class TreeMain {
             printTraversal(InorderTraversal.recursiveTraversal(resultingRoot, new ArrayList<>()));
             printTraversal(PreorderTraversal.recursiveTraversal(resultingRoot, new ArrayList<>()));
         }
+
+        {
+            System.out.println("Lowest Common Ancestor");
+            BinaryTreeNode lca = LowestCommonAncestor.lowestCommonAncestor(root, root.left, root.right);
+            // Node 2 is repeated. So output won't be correct. Code is correct, since it's tested with leetcode submission.
+            System.out.println("Lowest Common Ancestor is: " + lca.val);
+        }
     }
 
     public static void printTraversal(List<Integer> traversal) {
