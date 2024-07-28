@@ -1,11 +1,11 @@
 package stackandqueue;
 
-public class Stack {
+public class StackUsingArray {
     private int[] stackArray;
     private int stackSize;
     private int top;
 
-    public Stack(int stackSize) {
+    public StackUsingArray(int stackSize) {
         this.stackSize = stackSize;
         stackArray = new int[stackSize];
         top = -1;
@@ -76,7 +76,7 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack(10);
+        StackUsingArray stack = new StackUsingArray(10);
         stack.push(1);
         stack.push(2);
         stack.push(3);
