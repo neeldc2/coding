@@ -25,6 +25,8 @@ class TrappingRainwaterUsingMonotonicStack {
 
     public static void main(String[] args) {
         TrappingRainwaterUsingMonotonicStack trap = new TrappingRainwaterUsingMonotonicStack();
-        System.out.println(trap.trap(new int[]{10,0,2,0,4}));
+        System.out.println(trap.trap(new int[]{10, 0, 2, 0, 4}));
+        System.out.println(trap.trap(new int[]{3, 0, 2, 1, 4}));
+        System.out.println(trap.trap(new int[]{10, 0, 2, 1, 4}));
     }
 }
