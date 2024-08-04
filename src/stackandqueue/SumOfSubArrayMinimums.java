@@ -46,6 +46,6 @@ public class SumOfSubArrayMinimums {
 
     public static void main(String[] args) {
         SumOfSubArrayMinimums sum = new SumOfSubArrayMinimums();
-        System.out.println(sum.sumSubarrayMins(new int[]{3, 1, 2, 4}));
+        System.out.println(sum.sumSubarrayMins(new int[]{3,12,2,4}));
     }
 }
