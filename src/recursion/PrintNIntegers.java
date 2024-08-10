@@ -16,6 +16,7 @@ public class PrintNIntegers {
         }
 
         System.out.println(i);
+        // This is done differently in the method printFromN()
         i++;
         printFromOne(i);
     }
