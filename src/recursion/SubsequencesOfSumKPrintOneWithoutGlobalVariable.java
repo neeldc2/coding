@@ -6,7 +6,7 @@ import java.util.List;
 public class SubsequencesOfSumKPrintOneWithoutGlobalVariable {
 
     private static void print(int[] arr, int sumK) {
-        List<Integer> newArr = new ArrayList<>(); // This is needed because the previous iteration does not clear all the elements
+        List<Integer> newArr = new ArrayList<>();
         performAction(arr, 0, newArr, sumK);
     }
 
