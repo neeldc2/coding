@@ -3,18 +3,24 @@ package recursion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubsequencesOfSumKPrintAll {
+public class SubsequencesOfSumKPrintOne {
 
     private static List<Integer> newArr;
     private static int sum;
+    private static boolean found;
 
     private static void print(int[] arr, int sumK) {
-        newArr = new ArrayList<>();
+        newArr = new ArrayList<>(); // This is needed because the previous iteration does not clear all the elements
         sum = sumK;
+        found = false;
         performAction(arr, 0);
     }
 
     private static void performAction(int[] arr, int i) {
+        if (found) {
+            return;
+        }
+
         if (i >= arr.length) {
             if (newArr.isEmpty()) {
                 return;
@@ -25,6 +31,7 @@ public class SubsequencesOfSumKPrintAll {
                     System.out.print(a);
                 }
                 System.out.println();
+                found = true;
             }
             return;
         }
@@ -32,13 +39,17 @@ public class SubsequencesOfSumKPrintAll {
         newArr.add(arr[i]);
         performAction(arr, i + 1);
 
+        if (found) {
+            return;
+        }
+
         newArr.removeLast();
         performAction(arr, i + 1);
     }
 
     public static void main(String[] args) {
-        SubsequencesOfSumKPrintAll.print(new int[]{3, 1, 2}, 5);
-        SubsequencesOfSumKPrintAll.print(new int[]{3, 1, 2}, 3);
+        SubsequencesOfSumKPrintOne.print(new int[]{3, 1, 2}, 5);
+        SubsequencesOfSumKPrintOne.print(new int[]{3, 1, 2}, 3);
     }
 
 }

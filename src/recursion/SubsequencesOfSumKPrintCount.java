@@ -5,11 +5,12 @@ import java.util.List;
 
 public class SubsequencesOfSumKPrintCount {
 
-    private static List<Integer> newArr = new ArrayList<>();
+    private static List<Integer> newArr;
     private static int sum;
     private static int count;
 
     private static void print(int[] arr, int sumK) {
+        newArr = new ArrayList<>();
         sum = sumK;
         count = 0;
         performAction(arr, 0);
