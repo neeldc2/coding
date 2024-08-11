@@ -3,7 +3,7 @@ package recursion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubsequencesOfSumKPrintCount {
+public class SubsequencesOfSumKCount {
 
     private static List<Integer> newArr;
     private static int sum;
@@ -36,9 +36,9 @@ public class SubsequencesOfSumKPrintCount {
     }
 
     public static void main(String[] args) {
-        SubsequencesOfSumKPrintCount.print(new int[]{3, 1, 2}, 5);
+        SubsequencesOfSumKCount.print(new int[]{3, 1, 2}, 5);
         System.out.println(count);
-        SubsequencesOfSumKPrintCount.print(new int[]{3, 1, 2}, 3);
+        SubsequencesOfSumKCount.print(new int[]{3, 1, 2}, 3);
         System.out.println(count);
     }
 
