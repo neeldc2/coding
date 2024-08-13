@@ -14,11 +14,8 @@ public class CombinationSum {
     private static void performAction(int[] arr, int i, List<Integer> newArr, int sum, List<List<Integer>> solution) {
         if (i >= arr.length) {
             if (sum == 0) {
-                List<Integer> temp = new ArrayList<>();
-                for (Integer tempElement : newArr) {
-                    temp.add(tempElement);
-                }
-                solution.add(temp);
+                // Very Important step
+                solution.add(new ArrayList<>(newArr));
                 return;
             }
             return;
