@@ -48,6 +48,8 @@ public class CombinationSumCount {
         System.out.println(count);
         count = CombinationSumCount.getCount(new int[]{3, 1, 2}, 3);
         System.out.println(count);
+        count = CombinationSumCount.getCount(new int[]{2, 3, 6, 7}, 7);
+        System.out.println(count);
     }
 
 }
