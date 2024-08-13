@@ -21,7 +21,7 @@ public class Subsets2 {
             return;
         }
 
-        Set<Integer> tempSet = new HashSet();
+        Set<Integer> tempSet = new HashSet<>();
         for (int k = i ; k < nums.length; k++) {
             if (!tempSet.contains(nums[k])) {
                 tempSet.add(nums[k]);
@@ -34,7 +34,7 @@ public class Subsets2 {
     }
 
     private void addToSubsets(List<Integer> temp, List<List<Integer>> subsets) {
-        subsets.add(new ArrayList(temp));
+        subsets.add(new ArrayList<>(temp));
     }
 
     public static void main(String[] args) {
