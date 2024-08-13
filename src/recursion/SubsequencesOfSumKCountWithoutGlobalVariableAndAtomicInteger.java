@@ -8,11 +8,10 @@ public class SubsequencesOfSumKCountWithoutGlobalVariableAndAtomicInteger {
 
     private static int print(int[] arr, int sumK) {
         List<Integer> newArr = new ArrayList<>();
-        int count = 0;
-        return performAction(arr, 0, newArr, sumK, count);
+        return performAction(arr, 0, newArr, sumK);
     }
 
-    private static int performAction(int[] arr, int i, List<Integer> newArr, int sum, int count) {
+    private static int performAction(int[] arr, int i, List<Integer> newArr, int sum) {
         if (i >= arr.length) {
             if (newArr.isEmpty()) {
                 return 0;
@@ -25,10 +24,10 @@ public class SubsequencesOfSumKCountWithoutGlobalVariableAndAtomicInteger {
         }
 
         newArr.add(arr[i]);
-        int count1 = performAction(arr, i + 1, newArr, sum, count);
+        int count1 = performAction(arr, i + 1, newArr, sum);
 
         newArr.removeLast();
-        int count2 = performAction(arr, i + 1, newArr, sum, count);
+        int count2 = performAction(arr, i + 1, newArr, sum);
 
         return count1 + count2;
     }
