@@ -22,12 +22,12 @@ public class Subsets2 {
         }
 
         Set<Integer> tempSet = new HashSet<>();
-        for (int k = i ; k < nums.length; k++) {
+        for (int k = i; k < nums.length; k++) {
             if (!tempSet.contains(nums[k])) {
                 tempSet.add(nums[k]);
                 temp.add(nums[k]);
                 addToSubsets(temp, subsets);
-                findSubsets(nums, subsets, k+1, temp);
+                findSubsets(nums, subsets, k + 1, temp);
                 temp.removeLast();
             }
         }
@@ -40,6 +40,11 @@ public class Subsets2 {
     public static void main(String[] args) {
         Subsets2 subsets = new Subsets2();
         List<List<Integer>> solution = subsets.subsetsWithDup(new int[]{1, 2, 2});
+        print(solution);
+
+        System.out.println("---------------");
+
+        solution = subsets.subsetsWithDup(new int[]{4, 4, 4, 1, 4});
         print(solution);
     }
 
