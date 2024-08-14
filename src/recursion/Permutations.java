@@ -30,8 +30,8 @@ public class Permutations {
     }
 
     public static void main(String[] args) {
-        Permutations subsets = new Permutations();
-        List<List<Integer>> solution = subsets.permute(new int[]{10, 20, 30});
+        Permutations permutations = new Permutations();
+        List<List<Integer>> solution = permutations.permute(new int[]{10, 20, 30});
         print(solution);
 
         System.out.println("---------------");
