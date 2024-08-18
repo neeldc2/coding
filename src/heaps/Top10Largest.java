@@ -20,6 +20,14 @@ public class Top10Largest {
         }
     }
 
+    public void addNumberBetter(int num) {
+        // Since we are inserting 11th element here, best to make the size of Priority Queue as 11 instead of 10.
+        minHeap.offer(num);
+        if (minHeap.size() > 10) {
+            minHeap.poll();
+        }
+    }
+
     public int[] getTop10() {
         return minHeap.stream().sorted((a, b) -> b - a).mapToInt(Integer::intValue).toArray();
     }
@@ -30,7 +38,7 @@ public class Top10Largest {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         for (int num : numbers) {
-            top10.addNumber(num);
+            top10.addNumberBetter(num);
         }
 
         int[] result = top10.getTop10();
