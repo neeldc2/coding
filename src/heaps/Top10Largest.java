@@ -7,7 +7,6 @@ public class Top10Largest {
     private PriorityQueue<Integer> minHeap;
 
     public Top10Largest() {
-        // Min-heap to store the top 10 largest numbers
         minHeap = new PriorityQueue<>(10);
     }
 
@@ -20,8 +19,7 @@ public class Top10Largest {
         }
     }
 
-    public void addNumberBetter(int num) {
-        // Since we are inserting 11th element here, best to make the size of Priority Queue as 11 instead of 10.
+    public void addNumberSimpler(int num) {
         minHeap.offer(num);
         if (minHeap.size() > 10) {
             minHeap.poll();
@@ -38,7 +36,7 @@ public class Top10Largest {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         for (int num : numbers) {
-            top10.addNumberBetter(num);
+            top10.addNumberSimpler(num);
         }
 
         int[] result = top10.getTop10();
