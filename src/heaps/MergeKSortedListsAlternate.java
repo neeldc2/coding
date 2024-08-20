@@ -33,7 +33,7 @@ public class MergeKSortedListsAlternate {
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode result = new ListNode();
         if (lists.length == 0) {
-            return result;
+            return null;
         }
         Queue<ListNode> queue = new PriorityQueue<>(lists.length, (a, b) -> a.val - b.val);
 
@@ -47,6 +47,7 @@ public class MergeKSortedListsAlternate {
         while (!queue.isEmpty()) {
             ListNode smallestListNode = queue.poll();
             temp.next = new ListNode(smallestListNode.val);
+            temp = temp.next;
 
             smallestListNode = smallestListNode.next;
 
@@ -59,7 +60,7 @@ public class MergeKSortedListsAlternate {
     }
 
     public static void main(String[] args) {
-        MergeKSortedLists mergeKSortedLists = new MergeKSortedLists();
+        MergeKSortedListsAlternate mergeKSortedLists = new MergeKSortedListsAlternate();
         ListNode node1 = new ListNode(1, new ListNode(4, new ListNode(5)));
         ListNode node2 = new ListNode(1, new ListNode(3, new ListNode(4)));
         ListNode node3 = new ListNode(2, new ListNode(6));
