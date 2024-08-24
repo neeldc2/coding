@@ -2,12 +2,12 @@ package graphs;
 
 import java.util.LinkedList;
 
-public class GraphRepresentation {
+public class Graph {
     private int V;
-    private LinkedList<Integer> adjList[];
+    private LinkedList<Integer>[] adjList;
 
     // Constructor
-    GraphRepresentation(int V) {
+    Graph(int V) {
         this.V = V;
         adjList = new LinkedList[V];
         for (int i = 0; i < V; i++) {
@@ -33,7 +33,7 @@ public class GraphRepresentation {
     }
 
     public static void main(String[] args) {
-        GraphRepresentation g = new GraphRepresentation(5);
+        Graph g = new Graph(5);
 
         g.addEdge(0, 1);
         g.addEdge(0, 4);
