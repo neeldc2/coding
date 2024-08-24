@@ -40,6 +40,8 @@ public class MedianFinder {
             int sizeOfMaxHeap = maxHeap.size();
             int sizeOfMinHeap = minHeap.size();
 
+            // Allow adding numbers to both sides of the heap
+            // Balance the heap only when the size difference is 2.
             if (Math.abs(sizeOfMaxHeap - sizeOfMinHeap) > 1) {
                 if (sizeOfMaxHeap > sizeOfMinHeap) {
                     maxElementInMaxHeap = maxHeap.poll();
@@ -56,6 +58,7 @@ public class MedianFinder {
         int sizeOfMaxHeap = maxHeap.size();
         int sizeOfMinHeap = minHeap.size();
 
+        // sizeOfMaxHeap == sizeOfMinHeap means it is even
         if (sizeOfMaxHeap == sizeOfMinHeap) {
             int maxElementInMaxHeap = maxHeap.peek();
             int minElementInMinHeap = minHeap.peek();
