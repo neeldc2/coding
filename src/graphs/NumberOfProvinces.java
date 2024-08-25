@@ -55,9 +55,9 @@ public class NumberOfProvinces {
 
     public static void main(String[] args) {
         NumberOfProvinces number = new NumberOfProvinces();
-        System.out.println(number.findCircleNum(new int[][]{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}));
-        ;
-        System.out.println(number.findCircleNum(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
-        ;
+        int[][] input = new int[][]{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
+        System.out.println(number.findCircleNum(input));
+        input = new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+        System.out.println(number.findCircleNum(input));
     }
 }
