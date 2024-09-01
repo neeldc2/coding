@@ -53,6 +53,8 @@ public class DetectCycleInUndirectedGraphUsingBFS {
                     queue.offer(neighbouringVertex);
                 } else if (!parentNodesThatAreAlreadyCovered.contains(neighbouringVertex)) {
                     return true;
+                } else if (currentVertex.equals(neighbouringVertex)) {
+                    return true;
                 }
             }
         }
