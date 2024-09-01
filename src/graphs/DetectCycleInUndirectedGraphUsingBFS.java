@@ -54,6 +54,7 @@ public class DetectCycleInUndirectedGraphUsingBFS {
                 } else if (!parentNodesThatAreAlreadyCovered.contains(neighbouringVertex)) {
                     return true;
                 } else if (currentVertex.equals(neighbouringVertex)) {
+                    // Detect self-loop
                     return true;
                 }
             }
