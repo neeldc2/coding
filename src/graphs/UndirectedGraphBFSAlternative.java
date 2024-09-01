@@ -2,32 +2,42 @@ package graphs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This does not use array of List. Instead, it does List of List.
  */
-public class GraphBFSAlternative {
+public class UndirectedGraphBFSAlternative {
 
-    private int V; // Number of vertices
-    private ArrayList<ArrayList<Integer>> adj; // Adjacency list
+    private final int numberOfVertices; // Number of vertices
+    private final List<List<Integer>> adj; // Adjacency list
 
-    public GraphBFSAlternative(int v) {
-        V = v;
-        adj = new ArrayList<>(V);
-        for (int i = 0; i < V; i++) {
+    public UndirectedGraphBFSAlternative(int numberOfVertices) {
+        this.numberOfVertices = numberOfVertices;
+        adj = new ArrayList<>(this.numberOfVertices);
+        for (int i = 0; i < this.numberOfVertices; i++) {
             adj.add(new ArrayList<>());
         }
+    }
+
+    public int getNumberOfVertices() {
+        return numberOfVertices;
+    }
+
+    public List<List<Integer>> getAdj() {
+        return adj;
     }
 
     // Add an edge to the graph
     public void addEdge(int v, int w) {
         adj.get(v).add(w);
+        adj.get(w).add(v);
     }
 
     // BFS traversal from a given source vertex
     public void BFS(int s) {
         // Mark all vertices as not visited
-        boolean[] visited = new boolean[V];
+        boolean[] visited = new boolean[numberOfVertices];
 
         // Create a queue for BFS
         LinkedList<Integer> queue = new LinkedList<>();
@@ -54,7 +64,7 @@ public class GraphBFSAlternative {
     }
 
     public static void main(String[] args) {
-        GraphBFSAlternative g = new GraphBFSAlternative(4);
+        UndirectedGraphBFSAlternative g = new UndirectedGraphBFSAlternative(4);
         g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(1, 2);

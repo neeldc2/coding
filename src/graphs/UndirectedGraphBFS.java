@@ -3,12 +3,12 @@ package graphs;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class GraphBFS {
+public class UndirectedGraphBFS {
 
     private int V;
     private LinkedList<Integer>[] adj;
 
-    GraphBFS(int v) {
+    UndirectedGraphBFS(int v) {
         V = v;
         adj = new LinkedList[V];
         for (int i = 0; i < V; i++)
@@ -17,6 +17,7 @@ public class GraphBFS {
 
     void addEdge(int v, int w) {
         adj[v].add(w);
+        adj[w].add(v);
     }
 
     void BFS(int s) {
@@ -40,7 +41,7 @@ public class GraphBFS {
     }
 
     public static void main(String[] args) {
-        GraphBFS g = new GraphBFS(4);
+        UndirectedGraphBFS g = new UndirectedGraphBFS(4);
         g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(1, 2);
